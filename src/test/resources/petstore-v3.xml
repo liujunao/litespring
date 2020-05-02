@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 构造器注入测试文件 -->
+    <bean id="petStore" class="com.litespring.service.v3.PetStoreService">
+        <constructor-arg ref="accountDao"/>
+        <constructor-arg ref="itemDao"/>
+        <constructor-arg value="1"/>
+    </bean>
+
+    <bean id="accountDao" class="com.litespring.dao.v3.AccountDao"></bean>
+    <bean id="itemDao" class="com.litespring.dao.v3.ItemDao"></bean>
+</beans>

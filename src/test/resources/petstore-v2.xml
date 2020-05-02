@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- setter 注入测试文件 -->
+    <bean id="petStore" class="com.litespring.service.v2.PetStoreService">
+        <property name="accountDao" ref="accountDao"/>
+        <property name="itemDao" ref="itemDao"/>
+        <property name="owner" value="xxx"/> <!-- 进一步测试 -->
+        <property name="version" value="2"/> <!-- 再次测试:整形 -->
+    </bean>
+
+    <bean id="accountDao" class="com.litespring.dao.v2.AccountDao"></bean>
+    <bean id="itemDao" class="com.litespring.dao.v2.ItemDao"></bean>
+</beans>
